@@ -1,0 +1,17 @@
+body {
+  text-align: center;
+}
+
+.bloc {
+  margin: 0 auto;
+  width: 50%;
+  text-align: justify;
+}
+
+.btn {
+  border: 2px solid #000;
+  padding: 2px 17px;
+  border-radius: 3px;
+  color: #000;
+  text-decoration: none;
+}

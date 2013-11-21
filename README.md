@@ -1,2 +1,1 @@
-anarchist-ipsum
-===============
+anarchism in your mockups
