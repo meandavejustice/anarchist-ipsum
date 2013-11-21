@@ -1,4 +1,4 @@
-var endings = ['.', '?', '?', '!', '!', '...', '.', '.', '.', '.', '.', '.', '.', '.'];
+var endings = ['.', '?', '?', '!', '!', '‽', '...', '.', '.', '.', '.', '.', '.', '.', '.'];
 var texts = ['emma goldman', 'anarcho', 'capitalists', 'pigs', 'noam chomsky', 'revolution',
  'paris', 'pussy riot', 'capitalista', 'cuba', 'balaclava', 'red', 'black', 'flag', 'violence',
  'commune', 'marx', 'karl', 'bourgeois', 'syndicalism', 'syndicalist', 'communism', 'socialist',
