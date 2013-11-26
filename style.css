@@ -2,8 +2,14 @@ body {
   text-align: center;
 }
 
+.container {
+  background: url('a.png') no-repeat;
+  background-size: 30%;
+  background-position: 90%;
+}
+
 .bloc {
-  margin: 0 auto;
+  margin: 80px;
   width: 50%;
   text-align: justify;
 }

@@ -10,7 +10,8 @@ var texts = ['emma goldman', 'anarcho', 'capitalists', 'pigs', 'noam chomsky', '
  'Anarchiste', 'Campaign for Nuclear Disarmament', 'AFB', 'anarcha', 'rights', 'activism', 'indigenous',
  'savage', 'rights', 'workers', 'youth', 'industrial', 'World Trade Organization', 'WTO', 'control',
  'philosophy', 'post', 'insurrection', 'propaganda', 'faction', 'struggle', 'the coming insurrection',
- 'When the revolution comes'];
+ 'when the revolution comes', 'what civilization has done to', 'to the proletariat', 'relegated to',
+ 'formed an apparatus covertly against', 'THEY continue to push the conspirator', 'is war machines'];
 
 (function init() {
   var submission = document.querySelector('.submit');
@@ -22,9 +23,9 @@ var texts = ['emma goldman', 'anarcho', 'capitalists', 'pigs', 'noam chomsky', '
 function startRevolution(opts) {
   var ipsum;
   if (opts.firstBrick) {
-    ipsum = genPamphlet(getSentenceLength(), 5, opts.firstBrick);
+    ipsum = genPamphlet(getSentenceLength(), opts.paragraphs, true);
   } else {
-    ipsum = genPamphlet(getSentenceLength(), 5);
+    ipsum = genPamphlet(getSentenceLength(), opts.paragraphs);
   }
 
   document.querySelector('.bloc').innerHTML = ipsum;
@@ -61,11 +62,11 @@ function getSentence(numWords) {
     rant.push(randomUnitFromArray(texts));
   }
 
-  return rant.join(' ') + randomUnitFromArray(endings);
+  return rant.join(' ') + randomUnitFromArray(endings) + ' ';
 }
 
 function getParagraph(length) {
-  var paragraph;
+  var paragraph = '';
   for(var i = 0; i < length; i++) {
     paragraph += getSentence(getSentenceLength());
   }
@@ -75,24 +76,23 @@ function getParagraph(length) {
 function genPamphlet(length, paragraphs, firstBrick) {
   var pamphlet = '';
 
-  if (i === 0 && firstBrick) {
-    pamphlet = '<p>Anarcho ipsum dolor sit amet. ' + randomRant(length) + '</p>';
+  if (firstBrick) {
+    pamphlet = '<p>Anarcho ipsum dolor sit amet. ' + getSentence(getSentenceLength()) + '</p>';
   } else {
-    pamphlet = '<p>' + getParagraph(length) + '</p>';
+    pamphlet = '<p>' + getSentence(getSentenceLength()) + '</p>';
   }
 
   for(var i = 0; i < paragraphs; i++) {
-    pamphlet += getParagraph(length) + '<br/>'
+    pamphlet += getParagraph(length) + '<br/></br/>'
   }
   return pamphlet;
 }
 
 function submit(ev) {
   var options = {
-    paragraphs: parseInt(document.querySelector('.paragraphs'), 0),
-    firstBrick: document.querySelector('.start')
+    paragraphs: parseInt(document.querySelector('.paragraphs').value, 10) || 3,
+    firstBrick: document.querySelector('.start').checked
   };
 
   startRevolution(options);
 }
-

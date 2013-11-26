@@ -27,9 +27,16 @@
           </header>
           <div class="ipsum-dump"></div>
           <form method="post">
-            <input type="text" class="paragraphs" value="5" />
-            <input type="checkbox" class="start">
-            <a class="btn submit" href="javascript:void(0)">riot!</a>
+            <div id="" class="input-wrap">
+              <label for="paragraphs"># of paragraphs</label>
+              <input type="text" name="paragraphs" class="paragraphs" value="3" />
+            </div>
+            <div id="" class="input-wrap">
+              <label for="start">Start with &quot;Anarcho ipsum dolor sit amet.&quot;</label>
+              <input type="checkbox" name="start" class="start" checked>
+            </div>
+
+            <a class="btn submit" href="javascript:void(0)">Generate!</a>
           </form>
           <div class="bloc"></div>
         </div>
